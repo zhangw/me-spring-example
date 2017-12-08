@@ -35,7 +35,7 @@ public class PersonController {
 		if (person != null) {
 			return new ResponseEntity<>(personRepo.findOne(id), HttpStatus.OK);
 		} else {
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 	}
 
