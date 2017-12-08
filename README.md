@@ -8,6 +8,9 @@ This is an example project that illustrates creating a RESTful API in Spring Boo
 mvn spring-boot:run
 ```
 
+## Server context path
+the root path is **/gigy**
+
 ## Get token
 
 ```
@@ -20,6 +23,9 @@ Getting all people from the API:
 ```
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" -X GET http://localhost:8000/gigy/people
 ```
+
+## Get token by grant_type client_credentials
+curl -X POST --user 'gigy:secret' -d 'grant_type=client_credentials' http://localhost:8000/gigy/oauth/token
 
 ## LICENSE
 
