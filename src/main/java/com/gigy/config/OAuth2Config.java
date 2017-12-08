@@ -115,6 +115,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 		*/
 
 		//clients.jdbc(dataSource);
+		//使用自定义的JdbcClientDetailsService
 		clients.withClientDetails(new CustomizeJdbcClientDetailsService(dataSource));
 	}
 

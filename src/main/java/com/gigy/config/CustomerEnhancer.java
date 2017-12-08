@@ -1,9 +1,7 @@
 package com.gigy.config;
 
-import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
