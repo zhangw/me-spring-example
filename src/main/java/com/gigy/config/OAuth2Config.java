@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import javax.sql.DataSource;
 
+import com.gigy.service.CustomizeJdbcClientDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -47,9 +48,6 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
 	@Autowired
 	private RedisConnectionFactory redisConnectionFactory;
-
-	@Autowired
-	private ClientDetailsService clientDetailsService;
 
 	// password encryptor
 	@Bean
@@ -116,8 +114,8 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 			.authorizedGrantTypes("client_credentials").scopes("trade").additionalInformation(additionalInfo);
 		*/
 
-		clients.jdbc(dataSource);
-		//clients.withClientDetails(clientDetailsService);
+		//clients.jdbc(dataSource);
+		clients.withClientDetails(new CustomizeJdbcClientDetailsService(dataSource));
 	}
 
 }
